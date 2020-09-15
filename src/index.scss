@@ -1,0 +1,198 @@
+$text-color: #2E2E2E;
+$text-blue: #2c94e4;
+$background-color-trans: rgba(238, 238, 238, 0.9);
+$background-color: rgb(238, 238, 238);
+$backgroundImg: url('img/backgroundMain.jpg');
+
+body {
+    margin: 0;
+    font-family: 'Arvo', serif;
+    color: $text-color;
+    background-image: $backgroundImg;
+}
+
+nav {
+    ul {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding-right: 20px;
+        background-color: $background-color-trans;
+        font-size: 25px;
+
+        li {
+
+            list-style: none;
+
+            a {
+                display: block;
+                height: 30px;
+                padding: 15px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:hover {
+                background: $text-color;
+                color: white;
+                transition: background 0.3s;
+            }
+        }
+
+        
+    }
+}
+
+#mainPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #charGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px;
+
+        .charTile {
+
+            margin: 34px;
+            cursor: pointer;
+            transition: all 0.4s ease-out;
+
+            img {
+                display: block;
+                height: 174px;
+                width: 309px;
+                object-fit: cover;
+            }
+            
+            .charTileText {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: $background-color-trans;
+                font-size: 1.2rem;
+
+                p {
+                    margin: 5px;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(44, 148, 228, 0.4);
+}
+
+.charPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 900px;
+    height: 600px;
+    border-radius: 30px;
+    background-color: $background-color;
+    color: $text-blue;
+
+    button {
+        position: absolute;
+        top: -18px;
+        left: -18px;
+        width: 55px;
+        height: 55px;
+        border: none;
+        background: url('img/btn-close.png') no-repeat 0 -55px;
+        outline: none;
+
+        &:hover {
+            background-position: 0 0;
+            cursor: pointer;
+        }
+    }
+
+    .charName {
+        align-self: center;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 15px;
+    }
+
+    .charText {
+        display: flex;
+        align-items: flex-start;
+        font-size: 1.3rem;
+
+        .spoiler {
+            filter: blur(4px);
+            user-select: none;
+            cursor: pointer;
+        }
+
+        td {
+            padding: 3px 10px;
+        }
+    }
+
+    .charCard {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 25px;
+        padding-left: 12px;
+
+        .iconDiv {
+            position: relative;
+
+            .line {
+                position: absolute;
+                left: 1px;
+                bottom: 5px;
+            }
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            width: 500px;
+            margin: 0px 10px 10px 15px;
+
+            img {
+                height: 70px;
+                width: 70px;
+            }
+            
+            p {
+                margin-left: 10px;
+                font-size: 1.1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    #fullBody {
+        position: absolute;
+        right: -100px;
+        top: -35px;
+        height: 120%;
+    }
+}

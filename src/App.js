@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './Main.js';
+import Guilds from './Guilds.js';
+import Tiers from './Tiers.js';
+import { Link, Switch, Route } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return(
+        <>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to='/tiers'>Tiers</Link>
+                    </li>
+                    <li>
+                        <Link to='/guilds'>Guilds</Link>
+                    </li>
+                    <li>
+                        <Link to='/'>Home</Link>
+                    </li>
+                </ul>
+            </nav>
+            <Switch>
+                <Route path='/tiers' component={Tiers} />
+                <Route path='/guilds' component={Guilds} />
+                <Route path='' component={Main} />
+            </Switch>
+        </>
+    )
 }
 
 export default App;
